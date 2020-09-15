@@ -1,2 +1,1 @@
-print("greedy1 check")
-print("master branch check")
+#'현재 상황에서 지금 당장 좋은 것만 고르는 방법' - 탐욕법!
