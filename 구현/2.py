@@ -16,3 +16,21 @@
 
 7755                 READY
 """
+a = input()
+# //연산 : 나누기 후 나머지는 버리기
+mid = len(a)//2
+left=0
+right=0
+
+for i in range(0,mid):
+  left += int(a[i])
+  print(a[i])
+
+for i in range(mid,len(a)):
+  right += int(a[i])
+  print(a[i])
+
+if left == right:
+  print("LUCKY")
+else:
+  print("READY")
