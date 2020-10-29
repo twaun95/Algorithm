@@ -13,3 +13,17 @@ K1KA5CB7                  ABCKK13
 
 AJKDLSI412K4JSJ9D         ADDIJJJKKLSS20
 """
+data=input()
+result=[]
+sum=0
+
+for x in data:
+  if x.isalpha():
+    result.append(x)
+  else:
+    sum += int(x)
+
+result.sort()
+result.append(str(sum))
+
+print(''.join(result))

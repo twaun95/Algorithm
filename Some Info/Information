@@ -23,3 +23,15 @@ for i in range(0,3): # 0~2
   print(i)
 
 * 입력 예시를 모두 활용하자!
+
+5//3 -->  나눗셈 후에 나머지는 버리기
+
+x.isalpha() -> 알파벳인지 확인
+
+str(x) --> 문자열로
+
+data.append(x) 리스트에 붙이기
+
+print(''.join(result)) --> 리스트 result를 문자열로
+
+입력값은 data로, 출력 결과물은 result로 변수 설정하기
