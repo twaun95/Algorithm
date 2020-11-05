@@ -29,3 +29,53 @@
 15 L
 17 D
 """
+"""
+# n*n 2차원리스트 선언
+n = int(input())
+data = [[0] * (n+1) for _ in range(n+1)]
+data[0][1] = 1
+data[1][0] = 2
+print(data)
+"""
+#보드크기
+n = int(input())
+
+#사과개수
+k = int(input())
+
+#보드
+data = [[0]*(n+1) for _ in range(n+1)]
+
+#보드에서 사과 위치 설정 (1로)
+for _ in range(k):
+  a,b = map(int, input().split())
+  data[a][b] = 1
+print(data)
+#방황변환횟수
+info = []
+l = int(input())
+for _ in range(l):
+  x,c = input().split()
+  info.append((int(x), c))
+
+print(info)
+
+#방향설정 동(0),남(1),서(2),북(3) 
+dx = [0,1,0,-1]
+dy = [1,0,-1,0]
+
+def turn(direction,c):
+  if c == "L":
+    direction = (direction-1)%4
+  else:
+    direction = (direction+1)%4
+  
+  return direction  
+
+#처음 방향은 동쪽으로 가면서 시작
+direction = 0 
+
+"""
+nx= x + dx[direction]
+ny= y + dy[direction]
+"""
