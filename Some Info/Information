@@ -24,14 +24,33 @@ for i in range(0,3): # 0~2
 
 * 입력 예시를 모두 활용하자!
 
-5//3 -->  나눗셈 후에 나머지는 버리기
+# 5//3 -->  나눗셈 후에 나머지는 버리기
 
-x.isalpha() -> 알파벳인지 확인
+# x.isalpha() -> 알파벳인지 확인
 
-str(x) --> 문자열로
+# str(x) --> 문자열로
 
-data.append(x) 리스트에 붙이기
+# data.append(x) 리스트에 붙이기
 
-print(''.join(result)) --> 리스트 result를 문자열로
+# print(''.join(result)) --> 리스트 result를 문자열로
 
-입력값은 data로, 출력 결과물은 result로 변수 설정하기
+# 입력값은 data로, 출력 결과물은 result로 변수 설정하기
+
+#2차원 리스트
+n = int(input())
+data = [[0] * (n+1) for _ in range(n+1)]
+data[0][1] = 1
+data[1][0] = 2
+print(data)
+
+#리스트에 (x,y)형태로 입력가능
+a=[]
+a.append((1,2))
+print(a)
+
+info=[]
+l = int(input())
+for _ in range(l):
+  x,c = input().split()
+  info.append((int(x), c))
+print(info[0][1])

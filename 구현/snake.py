@@ -29,17 +29,9 @@
 15 L
 17 D
 """
-"""
-# n*n 2차원리스트 선언
-n = int(input())
-data = [[0] * (n+1) for _ in range(n+1)]
-data[0][1] = 1
-data[1][0] = 2
-print(data)
-"""
+
 #보드크기
 n = int(input())
-
 #사과개수
 k = int(input())
 
@@ -75,7 +67,48 @@ def turn(direction,c):
 #처음 방향은 동쪽으로 가면서 시작
 direction = 0 
 
-"""
-nx= x + dx[direction]
-ny= y + dy[direction]
-"""
+#메인시작
+
+def simulate():
+  x,y = 1,1 # 현재 뱀의 머리 위치
+  data[x][y] = 2 #뱀이 차지하고 있는 곳은 2로
+  q = [] #뱀이 차지하고 있는 위치정보
+  q.append((x,y))
+  direction = 0
+  time = 0
+  index = 0 #회전정보 인덱스
+
+  while True:
+    nx = x + dx[direction]
+    ny = y + dy[direction]
+
+    #이동했을 때 진행조건(범위 내에있고, 이동한 뱀의 머리가 뱀의 몸통과 부딪히지 않고)
+    if nx >= 1 and ny >= 1 and nx <= n and ny <= n and data[nx][ny] != 2:
+      #사과 유무
+      #사과X
+      if data[nx][ny] == 0:       
+        #꼬리
+        px,py = q.pop(0)
+        data[px][py] = 0
+      #사과O
+      if data[nx][ny] == 1:
+        data[nx][ny] == 2
+       
+    #끝날조건
+    else:
+      time += 1
+      break
+
+    #진행
+    #이동 후 머리 설정
+    x = nx
+    y = ny
+    q.append((x,y))
+    time += 1
+    #회전 총 수 l만큼 시간이 될때 마다 회전정보를 저장해놓은 Info에서 확인 
+    if index < l and time == info[index][0]:
+      direction = turn(direction, info[index][1])
+      index += 1
+  return time 
+
+print(simulate()) 
