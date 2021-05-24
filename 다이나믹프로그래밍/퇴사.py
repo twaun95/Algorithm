@@ -1,7 +1,7 @@
 #https://www.acmicpc.net/problem/14501
 #https://jrc-park.tistory.com/119?category=378936
 import sys
-import sys
+
 input = sys.stdin.readline
 
 n = int(input())
